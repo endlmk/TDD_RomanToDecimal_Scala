@@ -1,5 +1,11 @@
 object RomanToDecimal {
   def convert(s: String): Int = {
-    1
+    var result = 0
+    for(c <- s) {
+      if(c == 'I') {
+        result += 1
+      }
+    }
+    result
   }
 }
