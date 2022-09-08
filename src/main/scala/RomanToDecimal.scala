@@ -5,6 +5,9 @@ object RomanToDecimal {
       if(c == 'I') {
         result += 1
       }
+      if (c == 'V') {
+        result += 5
+      }
     }
     result
   }

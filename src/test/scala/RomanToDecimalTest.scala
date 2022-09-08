@@ -7,4 +7,7 @@ class RomanToDecimalTest extends AnyFunSuite {
   test("IIを渡すと2を返す") {
     assert(2 == RomanToDecimal.convert("II"))
   }
+  test("Vを渡すと5を返す") {
+    assert(5 == RomanToDecimal.convert("V"))
+  }
 }
