@@ -3,30 +3,13 @@ object RomanToDecimal {
     var result = 0
     for(i <- 0 until s.length) {
       var curChar = s.charAt(i)
+      var curNum = CharToNumber(curChar)
       if(i == s.length - 1) {
-        if (curChar == 'I') {
-          result += 1
-        }
-        if (curChar == 'V') {
-          result += 5
-        }
+        result += curNum
       }
       else {
         var nextChar = s.charAt(i + 1)
-        var curNum = 0
-        if (curChar == 'I') {
-          curNum = 1
-        }
-        if (curChar == 'V') {
-          curNum =  5
-        }
-        var nextNum = 0
-        if (nextChar == 'I') {
-          nextNum = 1
-        }
-        if (nextChar == 'V') {
-          nextNum = 5
-        }
+        var nextNum = CharToNumber(nextChar)
         if(curNum < nextNum) {
           result -= curNum
         }
@@ -36,5 +19,13 @@ object RomanToDecimal {
       }
     }
     result
+  }
+
+  private def CharToNumber(curChar: Char) = {
+    curChar match {
+      case 'I' => 1
+      case 'V' => 5
+      case _ => 0
+    }
   }
 }
