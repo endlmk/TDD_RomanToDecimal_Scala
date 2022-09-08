@@ -16,4 +16,19 @@ class RomanToDecimalTest extends AnyFunSuite {
   test("VIを渡すと6を返す") {
     assert(RomanToDecimal.convert("VI") == 6)
   }
+  test("Xを渡すと10を返す") {
+    assert(RomanToDecimal.convert("X") == 10)
+  }
+  test("Lを渡すと50を返す") {
+    assert(RomanToDecimal.convert("L") == 50)
+  }
+  test("Cを渡すと100を返す") {
+    assert(RomanToDecimal.convert("C") == 100)
+  }
+  test("Dを渡すと500を返す") {
+    assert(RomanToDecimal.convert("D") == 500)
+  }
+  test("Mを渡すと1000を返す") {
+    assert(RomanToDecimal.convert("M") == 1000)
+  }
 }
