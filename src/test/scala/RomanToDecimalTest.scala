@@ -31,4 +31,13 @@ class RomanToDecimalTest extends AnyFunSuite {
   test("Mを渡すと1000を返す") {
     assert(RomanToDecimal.convert("M") == 1000)
   }
+  test("MCMIVを渡すと1904を返す") {
+    assert(RomanToDecimal.convert("MCMIV") == 1904)
+  }
+  test("DXXIを渡すと521を返す") {
+    assert(RomanToDecimal.convert("DXXI") == 521)
+  }
+  test("MMMCMXCIXを渡すと3999を返す") {
+    assert(RomanToDecimal.convert("MMMCMXCIX") == 3999)
+  }
 }

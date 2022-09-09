@@ -1,22 +1,16 @@
 object RomanToDecimal {
   def convert(s: String): Int = {
     var result = 0
+    var curNum = CharToNumber(s.charAt(0))
     for(i <- 0 until s.length) {
-      var curChar = s.charAt(i)
-      var curNum = CharToNumber(curChar)
-      if(i == s.length - 1) {
-        result += curNum
+      var nextNum = if(i < s.length - 1) CharToNumber(s.charAt(i + 1)) else 0
+      if(curNum < nextNum) {
+        result -= curNum
       }
       else {
-        var nextChar = s.charAt(i + 1)
-        var nextNum = CharToNumber(nextChar)
-        if(curNum < nextNum) {
-          result -= curNum
-        }
-        else {
-          result += curNum
-        }
+        result += curNum
       }
+      curNum = nextNum
     }
     result
   }
